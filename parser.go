@@ -11,7 +11,7 @@ import (
 )
 import "golang.org/x/net/html/charset"
 
-//Value: struct for parsed xml
+//Value struct for parsed xml
 type Valute struct {
 	NumCode  string
 	CharCode string
@@ -20,7 +20,7 @@ type Valute struct {
 	Value    float32
 }
 
-//Result: array for parsed xml
+//Result array for parsed xml
 type Result struct {
 	ValCurs []Valute `xml:"Valute"`
 }
