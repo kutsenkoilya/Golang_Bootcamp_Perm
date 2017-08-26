@@ -24,8 +24,8 @@ type Result struct {
 	}
 
 func main() {
-	cmdarg_currency := flag.String("currency", "RUB", "currency")
-	cmdarg_value := flag.Int("value", 500, "value")
+	cmdargcurrency := flag.String("currency", "USD", "currency")
+	cmdargvalue := flag.Int("value", 500, "value")
 	flag.Parse()
 
 	ratesURL := "http://www.cbr.ru/scripts/XML_daily.asp"
@@ -54,8 +54,8 @@ func main() {
 		os.Exit(1)
     }
 	for _, curr := range v.ValCurs {
-		if curr.CharCode == *cmdarg_currency {
-			fmt.Printf("%.2f RUB\n", curr.Value * float32(*cmdarg_value) / float32(curr.Nominal))
+		if curr.CharCode == *cmdargcurrency {
+			fmt.Printf("%.2f RUB\n", curr.Value * float32(*cmdargvalue) / float32(curr.Nominal))
 			os.Exit(0)
 		}
 	}
