@@ -23,6 +23,7 @@ type Result struct {
 	ValCurs []Valute `xml:"Valute"`
 }
 
+
 func main() {
 	cmdargcurrency := flag.String("currency", "USD", "currency")
 	cmdargvalue := flag.Int("value", 500, "value")
