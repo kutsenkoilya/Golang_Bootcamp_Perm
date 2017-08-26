@@ -25,7 +25,6 @@ type Result struct {
 	ValCurs []Valute `xml:"Valute"`
 }
 
-
 func main() {
 	cmdargcurrency := flag.String("currency", "USD", "currency")
 	cmdargvalue := flag.Int("value", 500, "value")
@@ -58,7 +57,7 @@ func main() {
 	}
 	for _, curr := range v.ValCurs {
 		if curr.CharCode == *cmdargcurrency {
-			fmt.Printf("%.2f RUB\n", curr.Value*float32(*cmdargvalue)/float32(curr.Nominal))
+			fmt.Printf("%.2f RUB\n", multiply(curr.Value,float32(*cmdargvalue),float32(curr.Nominal)))
 			os.Exit(0)
 		}
 	}
